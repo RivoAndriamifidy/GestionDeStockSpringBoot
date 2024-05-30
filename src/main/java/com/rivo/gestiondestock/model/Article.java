@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -35,4 +37,8 @@ public class Article extends AbstractEntity{
 	
 	@Column(name = "photo")
 	private String photo;
+	
+	@ManyToOne //Many article to one category
+	@JoinColumn(name = "idcategory")
+	private Category category;
 }

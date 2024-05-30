@@ -1,7 +1,10 @@
 package com.rivo.gestiondestock.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,4 +24,7 @@ public class Category extends AbstractEntity{
 	
 	@Column(name = "designation")
 	private String designation;
+	
+	@OneToMany(mappedBy = "category") //one category to many article
+	private List<Article> articles;
 }
