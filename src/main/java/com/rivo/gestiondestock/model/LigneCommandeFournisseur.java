@@ -17,16 +17,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "lignevente")
-public class LigneVente extends AbstractEntity {
+@Table(name = "lignecommandefournisseur")
+public class LigneCommandeFournisseur extends AbstractEntity {
 
-  @ManyToOne
-  @JoinColumn(name = "idvente")
-  private Ventes vente;
-
-  @ManyToOne
+  @ManyToOne  
   @JoinColumn(name = "idarticle")
   private Article article;
+
+  @ManyToOne
+  @JoinColumn(name = "idcommandefournisseur")
+  private CommandeFournisseur commandeFournisseur;
 
   @Column(name = "quantite")
   private BigDecimal quantite;
@@ -38,3 +38,4 @@ public class LigneVente extends AbstractEntity {
   private Integer idEntreprise;
 
 }
+
