@@ -3,6 +3,8 @@ package com.rivo.gestiondestock.dto;
 import java.time.Instant;
 import java.util.List;
 
+import com.rivo.gestiondestock.model.Ventes;
+
 import lombok.Builder;
 import lombok.Data;
 

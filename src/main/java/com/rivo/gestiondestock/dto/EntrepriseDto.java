@@ -2,7 +2,9 @@ package com.rivo.gestiondestock.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rivo.gestiondestock.model.Adresse;
+import com.rivo.gestiondestock.model.Entreprise;
 
 import lombok.Builder;
 import lombok.Data;

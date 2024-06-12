@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.rivo.gestiondestock.model.Adresse;
 import com.rivo.gestiondestock.model.Entreprise;
+import com.rivo.gestiondestock.model.Utilisateur;
 
 public class UtilisateurDto {
 

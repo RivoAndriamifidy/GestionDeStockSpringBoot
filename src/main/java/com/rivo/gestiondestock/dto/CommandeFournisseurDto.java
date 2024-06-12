@@ -3,6 +3,7 @@ package com.rivo.gestiondestock.dto;
 import java.time.Instant;
 import java.util.List;
 
+import com.rivo.gestiondestock.model.CommandeFournisseur;
 import com.rivo.gestiondestock.model.EtatCommande;
 import com.rivo.gestiondestock.model.Fournisseur;
 

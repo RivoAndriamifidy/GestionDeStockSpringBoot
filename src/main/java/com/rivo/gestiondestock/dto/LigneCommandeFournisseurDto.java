@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import com.rivo.gestiondestock.model.Article;
 import com.rivo.gestiondestock.model.CommandeFournisseur;
+import com.rivo.gestiondestock.model.LigneCommandeFournisseur;
 
 import lombok.Builder;
 import lombok.Data;

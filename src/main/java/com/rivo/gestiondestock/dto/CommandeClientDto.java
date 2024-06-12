@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.List;
 
 import com.rivo.gestiondestock.model.Client;
+import com.rivo.gestiondestock.model.CommandeClient;
 import com.rivo.gestiondestock.model.EtatCommande;
 import com.rivo.gestiondestock.model.LigneCommandeClient;
 

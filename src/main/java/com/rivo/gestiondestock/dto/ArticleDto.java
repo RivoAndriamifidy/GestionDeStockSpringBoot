@@ -3,6 +3,7 @@ package com.rivo.gestiondestock.dto;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.rivo.gestiondestock.model.Article;
 import com.rivo.gestiondestock.model.Category;
 
 import lombok.Builder;

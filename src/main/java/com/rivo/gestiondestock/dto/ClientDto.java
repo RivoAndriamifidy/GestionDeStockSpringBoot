@@ -2,8 +2,8 @@ package com.rivo.gestiondestock.dto;
 
 import java.util.List;
 
-import com.rivo.gestiondestock.model.Adresse;
-import jakarta.persistence.Embedded;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rivo.gestiondestock.model.Client;
 import lombok.Builder;
 import lombok.Data;
 
