@@ -1,5 +1,7 @@
 package com.rivo.gestiondestock.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.rivo.gestiondestock.model.Roles;
 import com.rivo.gestiondestock.model.Utilisateur;
 
 import lombok.Builder;

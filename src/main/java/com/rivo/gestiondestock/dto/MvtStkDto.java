@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.Instant;
 
 import com.rivo.gestiondestock.model.Article;
+import com.rivo.gestiondestock.model.MvtStk;
 import com.rivo.gestiondestock.model.SourceMvtStk;
 import com.rivo.gestiondestock.model.TypeMvtStk;
 

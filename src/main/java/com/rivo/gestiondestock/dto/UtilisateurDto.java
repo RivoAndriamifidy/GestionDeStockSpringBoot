@@ -2,11 +2,17 @@ package com.rivo.gestiondestock.dto;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.rivo.gestiondestock.model.Adresse;
 import com.rivo.gestiondestock.model.Entreprise;
 import com.rivo.gestiondestock.model.Utilisateur;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
 public class UtilisateurDto {
 
 	private Integer id;
