@@ -7,7 +7,11 @@ import com.rivo.gestiondestock.model.CommandeFournisseur;
 import com.rivo.gestiondestock.model.EtatCommande;
 import com.rivo.gestiondestock.model.Fournisseur;
 
+import lombok.Builder;
+import lombok.Data;
 
+@Data
+@Builder
 public class CommandeFournisseurDto {
 
 	private Integer id;

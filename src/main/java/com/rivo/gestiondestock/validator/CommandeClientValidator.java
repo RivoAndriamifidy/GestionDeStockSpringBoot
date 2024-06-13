@@ -10,7 +10,7 @@ import com.rivo.gestiondestock.dto.CommandeClientDto;
 public class CommandeClientValidator {
 	
 	public static List<String> validate(CommandeClientDto dto) {
-	    List<String> errors = new ArrayList()<>();
+	    List<String> errors = new ArrayList<>();
 	    if (dto == null) {
 	      errors.add("Veuillez renseigner le code de la commande");
 	      errors.add("Veuillez renseigner la date de la commande");
