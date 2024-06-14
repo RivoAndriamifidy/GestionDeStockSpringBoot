@@ -1,7 +1,7 @@
 package com.rivo.gestiondestock.exception;
 
 
-public enum ErrorsCodes {
+public enum ErrorCodes {
 	
 	  ARTICLE_NOT_FOUND(1000),
 	  ARTICLE_NOT_VALID(1001),
@@ -57,7 +57,7 @@ public enum ErrorsCodes {
 
 	  private int code;
 
-	  private ErrorsCodes(int code) {
+	  private ErrorCodes(int code) {
 		this.code = code;
 	}
 
