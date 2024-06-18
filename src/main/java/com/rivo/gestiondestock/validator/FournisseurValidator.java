@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 
 import com.rivo.gestiondestock.dto.FournisseurDto;
 
-public class fournisseurValidator {
+public class FournisseurValidator {
 	
 	  public static List<String> validate(FournisseurDto dto) {
 		    List<String> errors = new ArrayList<>();
