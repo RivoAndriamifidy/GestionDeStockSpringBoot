@@ -1,4 +1,4 @@
-package com.rivo.gestiondestock;
+package com.rivo.gestiondestock.handler;
 
 import org.hibernate.annotations.NotFound;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.rivo.gestiondestock.exception.EntityNotFoundException;
 import com.rivo.gestiondestock.exception.InvalidEntityException;
-import com.rivo.gestiondestock.handler.ErrorDto;
 
 @RestControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler{
