@@ -18,6 +18,8 @@ public interface ArticleRepository extends JpaRepository<Article, Integer>{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	List<Article> findAllByCategoryId(Integer id);
 	
 
 }

@@ -10,4 +10,6 @@ public interface CategoryRepository extends JpaRepository<Integer, Category> {
 	
 	Optional<Category> findCategoryByCode(String code);
 
+	void deleteById(Integer id);
+
 }
