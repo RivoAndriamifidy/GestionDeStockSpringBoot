@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.rivo.gestiondestock.model.Utilisateur;
 
-public interface UtilisisateurRepository extends JpaRepository<Utilisateur, Integer>{
+public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer>{
 	
 	// JPQL query
 	  @Query(value = "select u from Utilisateur u where u.email = :email")

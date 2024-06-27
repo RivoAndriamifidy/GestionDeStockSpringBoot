@@ -15,6 +15,7 @@ import com.rivo.gestiondestock.exception.InvalidEntityException;
 import com.rivo.gestiondestock.repository.EntrepriseRepository;
 import com.rivo.gestiondestock.repository.RolesRepository;
 import com.rivo.gestiondestock.services.EntrepriseService;
+import com.rivo.gestiondestock.services.UtilisateurService;
 import com.rivo.gestiondestock.validator.EntrepriseValidator;
 
 import jakarta.transaction.Transactional;
