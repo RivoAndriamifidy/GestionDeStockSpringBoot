@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rivo.gestiondestock.model.Roles;
 
-public interface RolesRepository extends JpaRepository<Integer, Roles> {
+public interface RolesRepository extends JpaRepository<Roles, Integer> {
  
 }

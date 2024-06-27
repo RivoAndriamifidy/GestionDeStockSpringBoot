@@ -36,9 +36,9 @@ public class CommandeFournisseurDto {
 		        .id(commandeFournisseur.getId())
 		        .code(commandeFournisseur.getCode())
 		        .dateCommande(commandeFournisseur.getDateCommande())
-		        .fournisseur(FournisseurDto.fromEntity(commandeFournisseur.getFournisseur()))
 		        .etatCommande(commandeFournisseur.getEtatCommande())
 		        .idEntreprise(commandeFournisseur.getIdEntreprise())
+		        .fournisseur(FournisseurDto.fromEntity(commandeFournisseur.getFournisseur()))
 		        .build();
 		  }
 

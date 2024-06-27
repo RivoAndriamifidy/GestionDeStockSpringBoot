@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rivo.gestiondestock.model.LigneVente;
 
-public interface LigneVenteRepository extends JpaRepository<Integer, LigneVente> {
+public interface LigneVenteRepository extends JpaRepository<LigneVente, Integer> {
 	
 	  List<LigneVente> findAllByArticleId(Integer idArticle);
 

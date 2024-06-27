@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rivo.gestiondestock.model.CommandeClient;
 
-public interface CommandeClientRepository extends JpaRepository<Integer, CommandeClient>{
+public interface CommandeClientRepository extends JpaRepository<CommandeClient, Integer>{
 	
 	  Optional<CommandeClient> findCommandeClientByCode(String code);
 

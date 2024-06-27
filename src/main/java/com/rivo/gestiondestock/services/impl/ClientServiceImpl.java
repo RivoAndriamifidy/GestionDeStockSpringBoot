@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rivo.gestiondestock.dto.ClientDto;
+import com.rivo.gestiondestock.exception.EntityNotFoundException;
 import com.rivo.gestiondestock.exception.ErrorCodes;
 import com.rivo.gestiondestock.exception.InvalidEntityException;
 import com.rivo.gestiondestock.exception.InvalidOperationException;

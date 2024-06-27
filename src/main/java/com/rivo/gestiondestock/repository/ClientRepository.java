@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.rivo.gestiondestock.model.Client;
 
-public interface ClientRepository extends JpaRepository<Integer, Client>{
+public interface ClientRepository extends JpaRepository<Client,Integer>{
 
 	Client save(Client entity);
 
-	Optional<Integer> findById(Integer id);
+	Optional<Client> findById(Integer id);
 
 }
