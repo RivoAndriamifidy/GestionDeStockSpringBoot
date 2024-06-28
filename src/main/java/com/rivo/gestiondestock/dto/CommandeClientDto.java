@@ -27,7 +27,7 @@ public class CommandeClientDto {
 
 	  private Integer idEntreprise;
 
-	  private Client client;
+	  private ClientDto client;
 
 	  private List<LigneCommandeClientDto> ligneCommandeClients;
 	  
@@ -40,8 +40,9 @@ public class CommandeClientDto {
 		        .code(commandeClient.getCode())
 		        .dateCommande(commandeClient.getDateCommande())
 		        .etatCommande(commandeClient.getEtatCommande())
-		        .client(ClientDto.fromEntity(commandeClient.getClient()))
+		        
 		        .idEntreprise(commandeClient.getIdEntreprise())
+		        .client(ClientDto.fromEntity(commandeClient.getClient()))
 		        .build();
 
 		  }

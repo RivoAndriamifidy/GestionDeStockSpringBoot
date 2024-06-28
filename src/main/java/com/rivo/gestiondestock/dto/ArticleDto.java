@@ -29,7 +29,7 @@ public class ArticleDto {
 
 	  private Integer idEntreprise;
 
-	  private Category category;
+	  private CategoryDto category;
 
 	  private List<LigneVenteDto> ligneVentes;
 

@@ -15,7 +15,7 @@ public class LigneCommandeFournisseurDto {
 
 	private Integer id;
 	
-	  private Article article;
+	  private ArticleDto article;
 
 	  private CommandeFournisseur commandeFournisseur;
 

@@ -16,9 +16,9 @@ public class LigneVenteDto {
 
 	private Integer id;
 	
-	  private Ventes vente;
+	  private VentesDto vente;
 
-	  private Article article;
+	  private ArticleDto article;
 
 	  private BigDecimal quantite;
 

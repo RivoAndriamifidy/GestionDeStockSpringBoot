@@ -21,7 +21,7 @@ public class FournisseurDto {
 
 	  private String prenom;
 
-	  private Adresse adresse;
+	  private AdresseDto adresse;
 
 	  private String photo;
 
@@ -42,11 +42,11 @@ public class FournisseurDto {
 	        .id(fournisseur.getId())
 	        .nom(fournisseur.getNom())
 	        .prenom(fournisseur.getPrenom())
-	        .adresse(AdresseDto.fromEntity(fournisseur.getAdresse()))
 	        .photo(fournisseur.getPhoto())
 	        .mail(fournisseur.getMail())
 	        .numTel(fournisseur.getNumTel())
 	        .idEntreprise(fournisseur.getIdEntreprise())
+	        .adresse(AdresseDto.fromEntity(fournisseur.getAdresse()))
 	        .build();
 	  }
 

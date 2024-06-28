@@ -21,7 +21,7 @@ public class MvtStkDto {
 
 	  private BigDecimal quantite;
 
-	  private Article article;
+	  private ArticleDto article;
 
 	  private TypeMvtStk typeMvt;
 

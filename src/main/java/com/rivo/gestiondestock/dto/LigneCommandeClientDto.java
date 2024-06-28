@@ -17,9 +17,9 @@ public class LigneCommandeClientDto {
 	
 	private Integer id;
 
-	  private Article article;
+	  private ArticleDto article;
 	  
-	  private CommandeClient commandeClient;
+	  private CommandeClientDto commandeClient;
 
 	  private BigDecimal quantite;
 	  

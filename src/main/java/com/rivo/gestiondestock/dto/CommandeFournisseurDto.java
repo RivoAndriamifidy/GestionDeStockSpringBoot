@@ -24,7 +24,7 @@ public class CommandeFournisseurDto {
 
 	  private Integer idEntreprise;
 
-	  private Fournisseur fournisseur;
+	  private FournisseurDto fournisseur;
 
 	  private List<LigneCommandeFournisseurDto> ligneCommandeFournisseurs;
 	  

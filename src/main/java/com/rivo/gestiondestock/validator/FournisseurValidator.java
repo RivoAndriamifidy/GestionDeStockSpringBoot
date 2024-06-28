@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.util.StringUtils;
 
+import com.rivo.gestiondestock.dto.AdresseDto;
 import com.rivo.gestiondestock.dto.FournisseurDto;
 
 public class FournisseurValidator {
