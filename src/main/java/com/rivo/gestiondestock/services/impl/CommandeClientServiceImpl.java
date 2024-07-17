@@ -8,14 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rivo.gestiondestock.dto.CommandeClientDto;
+import com.rivo.gestiondestock.dto.LigneCommandeClientDto;
+import com.rivo.gestiondestock.dto.LigneCommandeFournisseurDto;
 import com.rivo.gestiondestock.exception.EntityNotFoundException;
 import com.rivo.gestiondestock.exception.ErrorCodes;
 import com.rivo.gestiondestock.exception.InvalidEntityException;
 import com.rivo.gestiondestock.model.Article;
 import com.rivo.gestiondestock.model.Client;
+import com.rivo.gestiondestock.model.CommandeClient;
+import com.rivo.gestiondestock.model.LigneCommandeClient;
 import com.rivo.gestiondestock.repository.ArticleRepository;
 import com.rivo.gestiondestock.repository.ClientRepository;
 import com.rivo.gestiondestock.repository.CommandeClientRepository;
+import com.rivo.gestiondestock.repository.LigneCommandeClientRepository;
 import com.rivo.gestiondestock.services.CommandeClientService;
 import com.rivo.gestiondestock.validator.CommandeClientValidator;
 
@@ -26,14 +31,16 @@ import lombok.extern.slf4j.Slf4j;
 public class CommandeClientServiceImpl implements CommandeClientService{
 
 	private CommandeClientRepository commandeClientRepository;
+	private LigneCommandeClientRepository ligneCommandeClientRepository;
 	private ClientRepository clientRepository;
 	private ArticleRepository articleRepository;
 	
 	@Autowired
 	public CommandeClientServiceImpl(CommandeClientRepository commandeClientRepository,
-			ClientRepository clientRepository, ArticleRepository articleRepository) {
+			ClientRepository clientRepository, ArticleRepository articleRepository, LigneCommandeClientRepository ligneCommandeClientRepositor) {
 		super();
 		this.commandeClientRepository = commandeClientRepository;
+		this.ligneCommandeClientRepository = ligneCommandeClientRepository;
 		this.clientRepository = clientRepository;
 		this.articleRepository = articleRepository;
 	}
@@ -65,7 +72,23 @@ public class CommandeClientServiceImpl implements CommandeClientService{
 				}
 			});
 		}
-		return null;
+		
+		if(!articleErrors.isEmpty()) {
+			log.warn("");
+			throw new InvalidEntityException("Article n'existe pas dans la BDD", ErrorCodes.ARTICLE_NOT_FOUND, articleErrors);
+		}
+		
+		CommandeClient savedCmdClt = commandeClientRepository.save(CommandeClientDto.toEntity(dto));
+		
+		if (dto.getLigneCommandeClients() != null) {
+			dto.getLigneCommandeClients().forEach(ligCmdClt -> {
+				LigneCommandeClient lignCommandeClient = LigneCommandeClientDto.toEntity(ligCmdClt);
+				lignCommandeClient.setCommandeClient(savedCmdClt);
+				ligneCommandeClientRepository.save(lignCommandeClient);
+			});
+		}
+		
+		return CommandeClientDto.fromEntity(savedCmdClt);
 	}
 
 	@Override
