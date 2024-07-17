@@ -1,5 +1,6 @@
 package com.rivo.gestiondestock.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,6 +11,7 @@ import com.rivo.gestiondestock.dto.CommandeClientDto;
 import com.rivo.gestiondestock.exception.EntityNotFoundException;
 import com.rivo.gestiondestock.exception.ErrorCodes;
 import com.rivo.gestiondestock.exception.InvalidEntityException;
+import com.rivo.gestiondestock.model.Article;
 import com.rivo.gestiondestock.model.Client;
 import com.rivo.gestiondestock.repository.ArticleRepository;
 import com.rivo.gestiondestock.repository.ClientRepository;
@@ -49,6 +51,19 @@ public class CommandeClientServiceImpl implements CommandeClientService{
 		if(client.isEmpty()) {
 			log.warn("Client with ID {} was not found in the DB", + dto.getClient().getId());
 			throw new EntityNotFoundException("Aucun client avec l'ID" + dto.getClient().getId() +"n'a ete trouve dans la BDD", ErrorCodes.CLIENT_NOT_FOUND);
+		}
+		
+		List<String> articleErrors = new ArrayList<>();
+		
+		if(dto.getLigneCommandeClients() != null) {
+			dto.getLigneCommandeClients().forEach(ligCmdClt -> {
+				if(ligCmdClt.getArticle() != null) {
+					Optional<Article> article = articleRepository.findById(ligCmdClt.getArticle().getId());
+					if(article.isEmpty()) {
+						articleErrors.add("l'article ave l'ID" + ligCmdClt.getArticle().getId() + "n'existe pas");
+					}
+				}
+			});
 		}
 		return null;
 	}
