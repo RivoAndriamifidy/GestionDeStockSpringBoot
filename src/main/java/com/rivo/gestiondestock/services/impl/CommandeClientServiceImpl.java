@@ -3,9 +3,11 @@ package com.rivo.gestiondestock.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.rivo.gestiondestock.dto.CommandeClientDto;
 import com.rivo.gestiondestock.dto.LigneCommandeClientDto;
@@ -95,25 +97,44 @@ public class CommandeClientServiceImpl implements CommandeClientService{
 
 	@Override
 	public CommandeClientDto findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		if(id == null) {
+			log.error("Commande client ID is null");
+			return null;
+		}
+		
+		return commandeClientRepository.findById(id)
+				.map(CommandeClientDto::fromEntity)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"Aucune commande client n'a ete trouve avec le code"+ id,ErrorCodes.COMMANDE_CLIENT_NOT_FOUND)
+						);
 	}
 
 	@Override
 	public CommandeClientDto findByCode(String code) {
-		// TODO Auto-generated method stub
-		return null;
+		if(!StringUtils.hasLength(code)) {
+			log.error("Commande client code is null");
+			return null;
+		}
+		
+		return commandeClientRepository.findCommandeClientByCode(code)
+				.map(CommandeClientDto::fromEntity)
+				.orElseThrow(()-> new EntityNotFoundException("Aucune commande client n'a ete trouve avec le code"+ code,ErrorCodes.COMMANDE_CLIENT_NOT_FOUND));
 	}
 
 	@Override
 	public List<CommandeClientDto> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return commandeClientRepository.findAll().stream()
+				.map(CommandeClientDto::fromEntity)
+				.collect(Collectors.toList());
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
+		if (id == null) {
+			log.error("Commande client ID is NULL");
+			return;
+		}
+		commandeClientRepository.deleteById(id);
 		
 	}
 
