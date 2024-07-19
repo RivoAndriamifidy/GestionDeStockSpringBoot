@@ -37,7 +37,7 @@ public class CommandeClientServiceImpl implements CommandeClientService{
 	
 	@Autowired
 	public CommandeClientServiceImpl(CommandeClientRepository commandeClientRepository,
-			ClientRepository clientRepository, ArticleRepository articleRepository, LigneCommandeClientRepository ligneCommandeClientRepositor) {
+			ClientRepository clientRepository, ArticleRepository articleRepository, LigneCommandeClientRepository ligneCommandeClientRepositor, LigneCommandeClientRepository ligneCommandeClientRepository) {
 		super();
 		this.commandeClientRepository = commandeClientRepository;
 		this.ligneCommandeClientRepository = ligneCommandeClientRepository;
@@ -69,6 +69,8 @@ public class CommandeClientServiceImpl implements CommandeClientService{
 					if(article.isEmpty()) {
 						articleErrors.add("l'article ave l'ID" + ligCmdClt.getArticle().getId() + "n'existe pas");
 					}
+				}else {
+					articleErrors.add("Impossible d'enregistrer une commande avec un article NULL");
 				}
 			});
 		}
